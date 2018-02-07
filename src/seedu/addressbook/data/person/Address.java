@@ -8,11 +8,16 @@ import seedu.addressbook.data.exception.IllegalValueException;
  */
 public class Address {
 
-    public static final String EXAMPLE = "123, some street";
-    public static final String MESSAGE_ADDRESS_CONSTRAINTS = "Person addresses can be in any format";
+    public static final String EXAMPLE = "123, Clementi Ave 3, #12-34, 231534";
+    public static final String MESSAGE_ADDRESS_CONSTRAINTS = "Person addresses must be in the format a/BLOCK, " +
+                                                                "STREET, UNIT, POSTAL_CODE";
     public static final String ADDRESS_VALIDATION_REGEX = ".+";
 
     public final String value;
+    public final Block block;
+    public final Street street;
+    public final Unit unit;
+    public final PostalCode postalCode;
     private boolean isPrivate;
 
     /**
@@ -23,10 +28,20 @@ public class Address {
     public Address(String address, boolean isPrivate) throws IllegalValueException {
         String trimmedAddress = address.trim();
         this.isPrivate = isPrivate;
-        if (!isValidAddress(trimmedAddress)) {
+
+        String[] addressAttributes = splitAddressByComma(trimmedAddress);
+
+        if (!isValidAddress(trimmedAddress) || addressAttributes.length != 4) {
             throw new IllegalValueException(MESSAGE_ADDRESS_CONSTRAINTS);
         }
-        this.value = trimmedAddress;
+
+        // Instantiate address attributes
+        this.block = new Block(addressAttributes[0]);
+        this.street = new Street(addressAttributes[1]);
+        this.unit = new Unit(addressAttributes[2]);
+        this.postalCode = new PostalCode(addressAttributes[3]);
+
+        this.value = formatAddressString(block, street, unit, postalCode);
     }
 
     /**
@@ -55,5 +70,13 @@ public class Address {
 
     public boolean isPrivate() {
         return isPrivate;
+    }
+
+    public String[] splitAddressByComma(String toSplit) {
+        return toSplit.trim().split(",");
+    }
+
+    public String formatAddressString(Block block, Street street, Unit unit, PostalCode postalCode) {
+        return block + ", " + street + ", " + unit + ", " + postalCode;
     }
 }
