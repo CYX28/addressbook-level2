@@ -43,11 +43,14 @@ Format: `add NAME [p]p/PHONE_NUMBER [p]e/EMAIL [p]a/ADDRESS [t/TAG]...`
 > Put a `p` before the phone / email / address prefixes to mark it as `private`. `private` details can only
 > be seen using the `viewall` command.
 > 
+> ADDRESS format: BLOCK, STREET, UNIT, POSTALCODE
+> Put 0 for BLOCK, 0 for STREET, #0-0 for UNIT AND 000000 for POSTALCODE if do not have any
+>
 > Persons can have any number of tags (including 0)
 
 Examples: 
-* `add John Doe p/98765432 e/johnd@gmail.com a/John street, block 123, #01-01`
-* `add Betsy Crowe pp/1234567 e/betsycrowe@gmail.com pa/Newgate Prison t/criminal t/friend`
+* `add John Doe p/98765432 e/johnd@gmail.com a/123, John street, #01-01, 000000`
+* `add Betsy Crowe pp/1234567 e/betsycrowe@gmail.com pa/0, Newgate Prison, #0-0, 000000 t/criminal t/friend`
 
 ### Listing all persons : `list`
 Shows a list of all persons in the address book.<br>
