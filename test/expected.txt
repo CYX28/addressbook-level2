@@ -19,6 +19,8 @@
 || Example: find alice bob charlie
 || list: Displays all persons in the address book as a list with index numbers.
 || Example: list
+|| sort: Sorts and displays all persons in the address book as a list with index numbers.
+|| Example: sort
 || view: Views the non-private details of the person identified by the index number in the last shown person listing.
 || Parameters: INDEX
 || Example: view 1
@@ -43,6 +45,10 @@
 || Address book has been cleared!
 || ===================================================
 || Enter command: || [Command entered:  list]
+|| 
+|| 0 persons listed!
+|| ===================================================
+|| Enter command: || [Command entered:  sort]
 || 
 || 0 persons listed!
 || ===================================================
@@ -294,6 +300,62 @@
 || Address book has been cleared!
 || ===================================================
 || Enter command: || [Command entered:  list]
+|| 
+|| 0 persons listed!
+|| ===================================================
+|| Enter command: || [Command entered:  add Zen p/666666 e/zen@gmail.com pa/666, define street, #09-90, 398439]
+|| New person added: Zen Phone: 666666 Email: zen@gmail.com Address: (private) 666, define street, #09-90, 398439 Tags: 
+|| ===================================================
+|| Enter command: || [Command entered:  list]
+|| 	1. Zen Phone: 666666 Email: zen@gmail.com Tags: 
+|| 
+|| 1 persons listed!
+|| ===================================================
+|| Enter command: || [Command entered:  sort]
+|| 	1. Zen Phone: 666666 Email: zen@gmail.com Tags: 
+|| 
+|| 1 persons listed!
+|| ===================================================
+|| Enter command: || [Command entered:  add Lucy Tan p/777777 e/lucyt@hotmail.com a/777, park road, #0-0, 000000 t/friends]
+|| New person added: Lucy Tan Phone: 777777 Email: lucyt@hotmail.com Address: 777, park road, #0-0, 000000 Tags: [friends]
+|| ===================================================
+|| Enter command: || [Command entered:  list]
+|| 	1. Zen Phone: 666666 Email: zen@gmail.com Tags: 
+|| 	2. Lucy Tan Phone: 777777 Email: lucyt@hotmail.com Address: 777, park road, #0-0, 000000 Tags: [friends]
+|| 
+|| 2 persons listed!
+|| ===================================================
+|| Enter command: || [Command entered:  sort]
+|| 	1. Lucy Tan Phone: 777777 Email: lucyt@hotmail.com Address: 777, park road, #0-0, 000000 Tags: [friends]
+|| 	2. Zen Phone: 666666 Email: zen@gmail.com Tags: 
+|| 
+|| 2 persons listed!
+|| ===================================================
+|| Enter command: || [Command entered:  add Peter Wong p/888888 e/peterw@yahoo.com.sg a/888, science street, #02-30, 430293]
+|| New person added: Peter Wong Phone: 888888 Email: peterw@yahoo.com.sg Address: 888, science street, #02-30, 430293 Tags: 
+|| ===================================================
+|| Enter command: || [Command entered:  list]
+|| 	1. Zen Phone: 666666 Email: zen@gmail.com Tags: 
+|| 	2. Lucy Tan Phone: 777777 Email: lucyt@hotmail.com Address: 777, park road, #0-0, 000000 Tags: [friends]
+|| 	3. Peter Wong Phone: 888888 Email: peterw@yahoo.com.sg Address: 888, science street, #02-30, 430293 Tags: 
+|| 
+|| 3 persons listed!
+|| ===================================================
+|| Enter command: || [Command entered:  sort]
+|| 	1. Lucy Tan Phone: 777777 Email: lucyt@hotmail.com Address: 777, park road, #0-0, 000000 Tags: [friends]
+|| 	2. Peter Wong Phone: 888888 Email: peterw@yahoo.com.sg Address: 888, science street, #02-30, 430293 Tags: 
+|| 	3. Zen Phone: 666666 Email: zen@gmail.com Tags: 
+|| 
+|| 3 persons listed!
+|| ===================================================
+|| Enter command: || [Command entered:  clear]
+|| Address book has been cleared!
+|| ===================================================
+|| Enter command: || [Command entered:  list]
+|| 
+|| 0 persons listed!
+|| ===================================================
+|| Enter command: || [Command entered:  sort]
 || 
 || 0 persons listed!
 || ===================================================

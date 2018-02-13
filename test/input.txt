@@ -21,9 +21,10 @@
   # address book should be emptied
   clear
   list
+  sort
 
 ##########################################################
-# test add person command, setup state for futuer tests
+# test add person command, setup state for future tests
 ##########################################################
 
   # should catch invalid args format
@@ -147,6 +148,26 @@
   # clears all
   clear
   list
+
+##########################################################
+# test sort command, setup state for future tests
+##########################################################
+
+  # should sort and list in ascending order
+  add Zen p/666666 e/zen@gmail.com pa/666, define street, #09-90, 398439
+  list
+  sort
+  add Lucy Tan p/777777 e/lucyt@hotmail.com a/777, park road, #0-0, 000000 t/friends
+  list
+  sort
+  add Peter Wong p/888888 e/peterw@yahoo.com.sg a/888, science street, #02-30, 430293
+  list
+  sort
+  
+  # clear file after testing
+  clear
+  list
+  sort
 
 ##########################################################
 # test exit command
